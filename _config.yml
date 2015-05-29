@@ -1,12 +1,12 @@
-name : Foundation5/github pages/Jykill starter
-brand : My Site
-description : This is the description of my site
+name : Skulpt.org Homepage
+brand : Skulpt
+description : A Browser-based Python interpreter for education
 keyword : 
-url : http://daigofuji.github.io/jekyll-foundation-5-starter/
-email : daigo@daigofujiwara.com
-twitter : DaigoFuji
-github : DaigoFuji
-author : Daigo Fujiwara
-analytics : UA-8418273-8
+url : http://skulpt.org
+email : skulpt-dev@groups.google.com
+twitter : 
+github : skulpt
+author : Brad Miller
+analytics : UA-10993568-1
 year : 2015
 markdown : kramdown
