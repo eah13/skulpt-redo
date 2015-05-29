@@ -72,6 +72,7 @@ for c in ['red', 'green', 'yellow', 'blue']:
 
 </div>
 <div class="row">
+<div class="small-12 columns">
     <p>The code is run entirely in your browser, so don't feel
     obligated to &quot;crash the server&quot;, you'll only stub your
     toe. 
@@ -105,8 +106,8 @@ for c in ['red', 'green', 'yellow', 'blue']:
             <li>Keyword arguments for <span style='font-family: "Consolas","Lucida Console","Monaco",monospace;'>sorted()</span></li>
             <li><span style='font-family: "Consolas","Lucida Console","Monaco",monospace;'>text()</span> function in processing</li>
         </ul>
-
-        <p>By these awesome people:
+    </p>
+    <p>By these awesome people:
             <a href="https://github.com/bnmnetp">Brad Miller</a>,
             <a href="https://github.com/rixner">Scott Rixner</a>,
             <a href="https://github.com/albertjan">Albert-Jan Nijburg</a>,
@@ -137,7 +138,7 @@ for c in ['red', 'green', 'yellow', 'blue']:
     <p>If you have a project that uses skulpt and would like me to link to it here, let me know on our github page.</p>
 
     <h2>Skulpt on <a href="http://www.coursera.org">Coursera</a></h2>
-    <P>
+    <p>
         <ul>
             <li><a href="https://www.coursera.org/course/interactivepython">An Introduction to Interactive Programming in Python</a></li>
             <li><a href="https://www.coursera.org/course/pythonlearn">Programming for Everybody</a></li>
@@ -210,6 +211,7 @@ for c in ['red', 'green', 'yellow', 'blue']:
 
     <p>My own personal page and blog is <a href="http://reputablejournal.com">Reputable Journal</a></p>
 
+    </div>
 </div>
 
 <div class="footer">
