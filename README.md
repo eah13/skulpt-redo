@@ -1,66 +1,52 @@
-jekyll-foundation-5-starter
+Skulpt Homepage Redo Sketch
 ===========================
 
-Start [a github pages](https://pages.github.com/) website powerd by [Jekyll](http://jekyllrb.com/docs/quickstart/) using [Foundation/SCSS](http://foundation.zurb.com/docs/sass.html) in under 5 minutes! 
+You can see [the working example site here](http://eah13.github.io/skulpt-redo/)
 
-### What it is.
+## Requirements
 
-Ever wanted a simple but nice looking responsive website as your project page or page for your repo? Are you in [a hackathon](http://baseballhackday.com) needing to put up a working website in munites? I do. Here is what I do, and I am sharing for you to use it, free. Free as in free speach AND free beer.
+* npm & Gem. `apt-get install` or do what you do to get these fro your system.
+* Jekyll.  `gem install github-pages` should get you what you need.
+* grunt. For SCSS changes only. `npm install -g grunt`.
 
-You can see [the working example site here](http://daigofuji.github.io/jekyll-foundation-5-starter/)
+## To Hack
 
-### For User & Organization Pages
-See [documentation](https://help.github.com/articles/user-organization-and-project-pages/)
+1. Clone the repo and cd into it
+2. `npm install`
+3. `bundle exec jekyll serve --watch` will start a server at http://localhost:4000
+4. Hack and save and the server will serve your changes.  Exception: `_config.yaml` requires a restart of the server
 
-1. Fork this repo to your user or project
-2. From the `settings` rename the repo to `username.github.io` naming scheme.
+SCSS hacks only:
 
-### For Project Pages
-See [documentation](https://help.github.com/articles/user-organization-and-project-pages/#project-pages)
-
-1. Create a `gh-pages` branch, i.e. `git checkout -b gh-pages`
-2. [Download the contents of this repo](https://github.com/daigofuji/jekyll-foundation-5-starter/archive/master.zip)
-3. Replace the entire branch contents with unzipped stuff
-4. Add, Commit then Publish the branch to github, i.e. `git push --set-upstream origin gh-pages`
-
-### To edit contents:
-1. edit `_config.yml`
-2. edit html/md files (hint: `_layouts/default.html` is the base)
-3. edit sass and run `grunt` (hint: Try [editing `scss/_stettings.scss`](http://foundation.zurb.com/docs/using-sass.html))
-4. edit `_include/nav.html` 
-
-Use at your own resk, and follw licence restriction of each products used. Most are MIT (OK to use commercially).
-
-### Useful command:
-
-Run grunt to compile css from sass by simply run 
-
-`grunt`
-
-from your terminal. It will launch watch. <code>control-c</code> to stop.
-
-You need to have grunt installed. <a href="http://daigo.org/2013/11/installing-npm-on-mavericks-macbook-pro/">This blog post</a> may be useful if you are like me and running Mac OS X.
-
-To run jekyll locally, run 
-
-`bundle exec jekyll serve --watch`
-
-Your website should be viewable by going to [localhost:4000](http://localhost:4000/)
-
-If you want to make sure foundation is up to date, try 
-
-`foundation update`
-
-(requires bower)
-
-Github's doc on <a href="https://help.github.com/articles/using-jekyll-with-pages">how to use Jekyll on Github Pages</a>. 
+* `grunt` will start a SCSS compiler watching for changes
 
 
-### Special Thanks
+### Make a page
 
-Special thanks to <a href="https://github.com/h5bp/html5-boilerplate">HTML 5 Boilerplate</a> whose code I have based this on.
+To make a new page, create a `yourpage.md` file in the root with a YAML header. A basic page would look like this:
 
-@kionoshp's <a href="https://github.com/kianoshp/SASS-CSS-Boilerplate">padding-margin</a>. Because it has become part of every site that I manage. 
+```
+---
+layout: default     <- loads the _layouts/default.html template and inserts the below into {{ content }}
+title: "My title here"
+skulpt: true       <- optional: load the skulpt and codemirror js/css on this page
+---
 
-and <a href="http://fortawesome.github.io/Font-Awesome/">Font Awesome</a> for bing awesome. 
+### This is where your markdown will go
 
+<p>Remember, HTML is valid markdown!</p>
+```
+
+### Using foundation for responsive layout
+
+Here's a tiny introduction to foundation: In foundation, everything's in a `<div class="row">`. Then you make columns with `<div class="small-12 columns>`.  12 is the max width of a column, and things inherit from small screens on up.  So `"small-12 columns"` means full width for all screen sizes.  `"small-12 large-6 columns"` means full width for small screens but half width for large ones, which I've used to get the code window and output side-by-side.  More on [the foundation docs site](http://foundation.zurb.com/docs), which is pretty good.  Lots of good code examples.
+
+`default.html` sets your content in a `"small-12 columns"` so you can throw raw text at it and it'll still look decent.  In otherwords, for a basic page you should just be able to write markdown and it'll look great.
+
+### Hacking SCSS
+
+We'll aim for a set-and-forget style for the site.  So, after the initial hacking, this shouldn't change too much.
+
+Make changes in `scss/_custom.scss`.  You'll want libsass running via grunt to see changes.  I sometimes forget that and needlessly debug CSS selectors >:(
+
+Site-wide settings for foundation are accessed via `scss/_settings.scss`.  The default values are in there, commented out.  To hack, uncomment and mod them.
